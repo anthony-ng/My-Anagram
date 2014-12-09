@@ -2,13 +2,13 @@
 
 class Word < ActiveRecord::Base
   # Remember to create a migration!
-  def self.anagrams
+  def self.anagrams(args)
     anagrams_array = []
 
     #looping the table and sort the corresponding words and push it to the array
-    Words.all.each do |word_object|
-      if word_object.word.downcase.split(" ") == self.word.downcase.split(" ")
-        anagrams_array << word_object
+    Word.all.each do |word_object|
+      if word_object.word.downcase.split("").sort! == args.downcase.split("").sort!
+        anagrams_array << word_object.word
       end
     end
     anagrams_array
