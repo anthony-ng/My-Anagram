@@ -1,4 +1,4 @@
-require_relative '../models/word.rb'
+# require_relative '../models/word.rb'
 
 get '/:word' do
   @word = params[:word]

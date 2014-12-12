@@ -1,5 +1,10 @@
 
 <div class="container">
   <p>Show a list of anagrams for "<%= @word %>"</p>
-  <p><%= @anagrams %></p>
+<!--   <p><%= @anagrams %></p> -->
+  <p>
+  	<% @anagrams.each_with_index do |anagram, index| %>
+  		<%= "#{index + 1}: #{anagram}" %><br><br>
+  	<% end %>
+  </p>
 </div>
