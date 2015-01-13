@@ -5,9 +5,9 @@ get '/:word' do
 
   start_time = Time.now
 
-  # Input: [#<act>, #<cat>, #<tac>]
+  # Input: [#<act>, #<cat>]
   # Select all anagrams EXCEPT the #<cat> itself
-  # @anagrams = [#<act>, #<tac>]
+  # @anagrams = [#<act>]
   @anagrams = Word.anagram(@word).select {|row|
     row.word.downcase != @word.downcase
   }
