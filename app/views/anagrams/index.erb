@@ -1,3 +1,12 @@
+<!-- View -->
 <div class="container">
   <p>Show a list of anagrams for "<%= @word %>"</p>
+  <ul class="list">
+    <% @anagrams.each do |anagram| %>
+      <li>
+        <%= anagram.word %>
+      </li>
+    <% end %>
+  </ul>
+  <p>Calculated time: <%= @time_difference.round(2) %> seconds</p>
 </div>
