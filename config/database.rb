@@ -1,4 +1,4 @@
-# Log queries to STDOUT in development
+ # Log queries to STDOUT in development
 if Sinatra::Application.development?
   ActiveRecord::Base.logger = Logger.new(STDOUT)
 end
@@ -41,4 +41,3 @@ ActiveRecord::Base.establish_connection(
   :database => DB_NAME,
   :encoding => 'utf8'
 )
-#testing
