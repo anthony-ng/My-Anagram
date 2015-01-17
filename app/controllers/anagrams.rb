@@ -1,4 +1,5 @@
 # Controller
+
 get '/:word' do
   # @word = "Cat"
   @word = params[:word]
@@ -18,3 +19,4 @@ get '/:word' do
 
   erb :"anagrams/index"
 end
+
