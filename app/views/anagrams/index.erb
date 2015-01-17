@@ -1,12 +1,29 @@
 <!-- View -->
 <div class="container">
-  <p>Show a list of anagrams for "<%= @word %>"</p>
-  <ul class="list">
-    <% @anagrams.each do |anagram| %>
-      <li>
-        <%= anagram.word %>
-      </li>
+  <div id="input">
+    <h1>Welcome to MyAnagram</h1>
+    <h4>This app will accepts a word and returns a list of anagrams</h4>
+
+    <form action="/" method="post">
+      <input type="text" name="input">
+      <input type="submit" value="Submit!">
+    </form>
+  </div>
+  <div id="output">
+    <% if @word %>
+      <p>Show a list of anagrams for "<%= @word %>":</p>
+      <ol class="list">
+        <% if !@anagrams.empty? %>
+          <% @anagrams.each do |anagram| %>
+            <li>
+              <%= anagram.word %>
+            </li>
+          <% end %>
+        <% else %>
+          <p>Retry!</p>
+        <% end %>
+      </ol>
+      <p>Calculated time: <%= @time_difference.round(2) %> seconds</p>
     <% end %>
-  </ul>
-  <p>Calculated time: <%= @time_difference.round(2) %> seconds</p>
+  </div>
 </div>

@@ -1,4 +1,11 @@
 # Controller
+get '/' do
+  erb :"anagrams/index"
+end
+
+post '/' do
+  redirect params[:input]
+end
 
 get '/:word' do
   # @word = "Cat"
